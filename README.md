@@ -2,7 +2,7 @@
 
 These are the resources and demos associated with the tutorial ICWSM 2021. Check our [website](https://hate-alert.github.io/talk/icwsm_tutorial/) here.
 
-**Date and Time** - June 7, 2021, 5:30 PM -7:00 PM
+**Date and Time** - June 7, 2021, 5:30 PM -7:00 PM IST
 
 # Abstract
 
