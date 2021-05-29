@@ -25,5 +25,5 @@ We also provide some demos for the social scientists so that our opensource mode
 
 
 
-#####  :thumbsup: The repo is still in active developements. Feel free to create an [issue](https://github.com/hate-alert/Tutorial-ICWSM-2021/issues) for the demos as well as the notion page that we shared!!  :thumbsup:
+###  :thumbsup: The repo is still in active developements. Feel free to create an [issue](https://github.com/hate-alert/Tutorial-ICWSM-2021/issues) for the demos as well as the notion page that we shared!!  :thumbsup:
 
