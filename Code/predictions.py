@@ -127,7 +127,7 @@ class modelPredRationale():
 
 
 class modelPred():
-    def __init__(self, language='english', device):
+    def __init__(self, language='english', device=device):
         self.__modelDict ={
         'arabic':"Hate-speech-CNERG/dehatebert-mono-arabic",
         'english': "Hate-speech-CNERG/dehatebert-mono-english",
