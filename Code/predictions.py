@@ -31,7 +31,8 @@ class modelPredRationale():
         self.model = Model_Rational_Label.from_pretrained(model_path,output_attentions = True,output_hidden_states = False).to(self.device)
         if torch.cuda.is_available():
             self.model.cuda()  
-        self.model.eval() 
+        self.model.eval()
+        self.tokenizer = AutoTokenizer.from_pretrained(self.model_path, use_fast = False) 
         
     def preprocess_func(self, text):
         remove_words=['<allcaps>','</allcaps>','<hashtag>','</hashtag>','<elongated>','<emphasis>','<repeated>','\'','s']
@@ -43,7 +44,6 @@ class modelPredRationale():
     
     def tokenize(self, sentences, padding = True, max_len = 128):
         input_ids, attention_masks, token_type_ids = [], [], []
-        self.tokenizer = AutoTokenizer.from_pretrained(self.model_path, use_fast = False)
         for sent in sentences:
             encoded_dict = self.tokenizer.encode_plus(sent,
                                                     add_special_tokens=True,
@@ -121,7 +121,7 @@ class modelPredRationale():
         for idx, tokenized in enumerate(tokenized_sentences):
             tokenized = tokenized[:sentence_lengths[idx]]
             tokens_sentence.append(tokenized)
-            
+
         return np.array(labels_list), np.array(attention_vectors), tokens_sentence 
 
 
