@@ -62,15 +62,15 @@ class modelPredRationale():
     
     def process_data(self, sentences_list):
         sentences = []
+        sentence_lengths = []
         for sentence in sentences_list:
             try:
                 sentence = self.preprocess_func(sentence)
             except TypeError:
                 sentence = self.preprocess_func("dummy text")
             sentences.append(sentence)
+            sentence_lengths.append(len(self.tokenizer.encode(sentence)))
         inputs = self.tokenize(sentences)
-
-        sentence_lengths = [len(ele) for ele in  inputs['input_ids']]
         tokenized_sentences = [self.tokenizer.convert_ids_to_tokens(ele) for ele in  inputs['input_ids']]
 
         return self.get_dataloader(inputs), sentence_lengths, tokenized_sentences
@@ -116,8 +116,13 @@ class modelPredRationale():
             attention_vector = softmax(rationales[:sentence_lengths[idx]])
             attention_vector = list(attention_vector) + [0]*(128-len(list(attention_vector)))
             attention_vectors.append(attention_vector)
+        
+        tokens_sentence=[]
+        for idx, tokenized in enumerate(tokenized_sentences):
+            tokenized = tokenized[:sentence_lengths[idx]]
+            tokens_sentence.append(tokenized)
             
-        return np.array(labels_list), np.array(attention_vectors), tokenized_sentences 
+        return np.array(labels_list), np.array(attention_vectors), tokens_sentence 
 
 
 
