@@ -67,7 +67,11 @@ class modelPredRationale():
                 sentence = self.preprocess_func("dummy text")
             sentences.append(sentence)
         inputs = self.tokenize(sentences)
-        return self.get_dataloader(inputs)
+
+        sentence_lengths = [len(ele) for ele in  inputs['input_ids']]
+        tokenized_sentences = [self.tokenizer.convert_ids_to_tokens(ele) for ele in  inputs['input_ids']]
+
+        return self.get_dataloader(inputs), sentence_lengths, tokenized_sentences
     
     def get_dataloader(self, inputs):
         data = TensorDataset(inputs['input_ids'], inputs['attention_masks'])
@@ -80,13 +84,12 @@ class modelPredRationale():
         """Output: probablity values"""
         device = self.device
 
-        test_dataloader=self.process_data(sentences_list)
+        test_dataloader,sentence_lengths, tokenized_sentences=self.process_data(sentences_list)
 
         print("Running eval on test data...")
         labels_list=[]
         rationale_list=[]
         rationale_logit_list = []
-        sentence_lengths = [len(self.tokenizer.encode(sentence)) for sentence in  sentences_list]
         # Evaluate data 
         for step,batch in enumerate(test_dataloader):
 
@@ -112,7 +115,7 @@ class modelPredRationale():
             attention_vector = list(attention_vector) + [0]*(128-len(list(attention_vector)))
             attention_vectors.append(attention_vector)
             
-        return np.array(labels_list), np.array(attention_vectors)   
+        return np.array(labels_list), np.array(attention_vectors), tokenized_sentences 
 
 
 
