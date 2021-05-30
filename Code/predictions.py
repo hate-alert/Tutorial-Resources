@@ -28,7 +28,8 @@ class modelPredRationale():
         self.device = device
         self.model_path=model_path
         self.model = Model_Rational_Label.from_pretrained(model_path,output_attentions = True,output_hidden_states = False).to(self.device)
-        self.model.cuda()  
+        if torch.cuda.is_available():
+            self.model.cuda()  
         self.model.eval() 
         
     def preprocess_func(self, text):
