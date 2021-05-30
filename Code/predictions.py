@@ -2,7 +2,7 @@ from ekphrasis.classes.preprocessor import TextPreProcessor
 from ekphrasis.classes.tokenizer import SocialTokenizer
 from ekphrasis.dicts.emoticons import emoticons
 import re
-from transformers import AutoTokenizer
+from transformers import AutoTokenizer,AutoModelForSequenceClassification
 import numpy as np
 import torch
 from .model import *
