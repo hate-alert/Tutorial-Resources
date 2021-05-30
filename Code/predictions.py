@@ -5,7 +5,7 @@ import re
 from transformers import AutoTokenizer
 import numpy as np
 import torch
-from ,model import *
+from .model import *
 
 text_processor = TextPreProcessor(
     normalize=['url', 'email', 'percent', 'money', 'phone', 'user',
