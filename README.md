@@ -1,3 +1,7 @@
+[![GitHub license](https://img.shields.io/github/license/Naereen/StrapDown.js.svg)](https://github.com/Naereen/StrapDown.js/blob/master/LICENSE)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
+
+
 # Hate speech detection, mitigation and beyond (Tutorial ICWSM-2021) 
 
 These are the resources and demos associated with the tutorial ICWSM 2021. Check our [website](https://hate-alert.github.io/talk/icwsm_tutorial/) here.
