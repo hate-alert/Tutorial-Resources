@@ -132,7 +132,7 @@ class modelPred():
         self.__modelDict ={
         'arabic':"Hate-speech-CNERG/dehatebert-mono-arabic",
         'english': "Hate-speech-CNERG/dehatebert-mono-english",
-        'english_hatexplain':"Hate-speech-CNERG/bert-base-uncased-hatexplain"
+        'english_hatexplain':"Hate-speech-CNERG/bert-base-uncased-hatexplain",
         'french': "Hate-speech-CNERG/dehatebert-mono-english",
         'german': "Hate-speech-CNERG/dehatebert-mono-german",
         'indonesian': "Hate-speech-CNERG/dehatebert-mono-indonesian",
