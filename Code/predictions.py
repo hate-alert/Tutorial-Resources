@@ -4,6 +4,7 @@ from ekphrasis.dicts.emoticons import emoticons
 import re
 from transformers import AutoTokenizer
 import numpy as np
+import torch
 
 text_processor = TextPreProcessor(
     normalize=['url', 'email', 'percent', 'money', 'phone', 'user',
