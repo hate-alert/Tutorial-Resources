@@ -24,8 +24,8 @@ text_processor = TextPreProcessor(
 
 
 class modelPredRationale():
-    def __init__(self, model_path = 'bert-base-uncased'):
-        self.device = torch.device("cuda")
+    def __init__(self, model_path = 'bert-base-uncased', device = None):
+        self.device = device
         self.model_path=model_path
         self.model = Model_Rational_Label.from_pretrained(model_path,output_attentions = True,output_hidden_states = False).to(self.device)
         self.model.cuda()  
