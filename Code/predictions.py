@@ -2,7 +2,7 @@ from ekphrasis.classes.preprocessor import TextPreProcessor
 from ekphrasis.classes.tokenizer import SocialTokenizer
 from ekphrasis.dicts.emoticons import emoticons
 import re
-from transformers import AutoTokenizer,AutoModelForSequenceClassification
+from transformers import AutoTokenizer,AutoModelForSequenceClassification,AutoConfig
 import numpy as np
 import torch
 from .model import *
@@ -29,6 +29,7 @@ class modelPredRationale():
         self.device = device
         self.model_path=model_path
         self.model = Model_Rational_Label.from_pretrained(model_path,output_attentions = True,output_hidden_states = False).to(self.device)
+        self.config = AutoConfig.from_pretrained(self.model_path)
         if torch.cuda.is_available():
             self.model.cuda()  
         self.model.eval()
@@ -131,6 +132,7 @@ class modelPred():
         self.__modelDict ={
         'arabic':"Hate-speech-CNERG/dehatebert-mono-arabic",
         'english': "Hate-speech-CNERG/dehatebert-mono-english",
+        'english_hatexplain':"Hate-speech-CNERG/bert-base-uncased-hatexplain"
         'french': "Hate-speech-CNERG/dehatebert-mono-english",
         'german': "Hate-speech-CNERG/dehatebert-mono-german",
         'indonesian': "Hate-speech-CNERG/dehatebert-mono-indonesian",
@@ -145,6 +147,7 @@ class modelPred():
         self.device = device
         self.model_path=self.__modelDict[language]
         self.model = AutoModelForSequenceClassification.from_pretrained(self.model_path)
+        self.config = AutoConfig.from_pretrained(self.model_path)
         # if(model_name=='xlmr'):
         #     self.model = XLMRobertaForSequenceClassification.from_pretrained(self.model_path,output_attentions = True,output_hidden_states = False).to(self.device)
         # elif(model_name=='bert'):
