@@ -127,7 +127,7 @@ class modelPredRationale():
 
 
 class modelPred():
-    def __init__(self, language='english', type='hate'):
+    def __init__(self, language='english', device):
         self.__modelDict ={
         'arabic':"Hate-speech-CNERG/dehatebert-mono-arabic",
         'english': "Hate-speech-CNERG/dehatebert-mono-english",
@@ -142,7 +142,7 @@ class modelPred():
         'malyalam': "Hate-speech-CNERG/deoffxlmr-mono-malyalam",
         'tamil': "Hate-speech-CNERG/deoffxlmr-mono-tamil",
         }
-        self.device = torch.device("cuda")
+        self.device = device
         self.model_path=self.__modelDict[language]
         self.model = AutoModelForSequenceClassification.from_pretrained(self.model_path)
         # if(model_name=='xlmr'):
