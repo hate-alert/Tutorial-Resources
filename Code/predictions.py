@@ -5,6 +5,7 @@ import re
 from transformers import AutoTokenizer
 import numpy as np
 import torch
+from ,model import *
 
 text_processor = TextPreProcessor(
     normalize=['url', 'email', 'percent', 'money', 'phone', 'user',
@@ -73,45 +74,6 @@ class modelPredRationale():
         sampler = SequentialSampler(data)
         return DataLoader(data, sampler=sampler, batch_size=32)
     
-    def return_probab(self,sentences_list):
-        """Input: should be a list of sentences"""
-        """Output: probablity values"""
-        device = self.device
-
-        test_dataloader=self.process_data(sentences_list)
-
-        print("Running eval on test data...")
-        logits_all=[]
-
-        # Evaluate data 
-        for step,batch in enumerate(test_dataloader):
-
-            b_input_ids = batch[0].to(device)
-            b_input_mask = batch[1].to(device)
-      
-            outputs = self.model(b_input_ids, b_input_mask)
-        
-            if type(outputs) == tuple:
-                logits = outputs[0]
-            else:
-                logits = outputs
-                    
-            logits = logits.detach().cpu().numpy()
-
-            logits_all+=list(logits)
-
-        logits_all_final=[]
-        for logits in logits_all:
-#             print(logits)
-            logits_all_final.append(list(softmax(logits)))
-            
-        if self.flip:
-            print(logits_all_final)
-            logits_array = np.array(logits_all_final)
-            logits_array[:,[0, 1]] = logits_array[:,[1, 0]]
-            print(logits_array)
-            return logits_array
-        return np.array(logits_all_final)
     
     def return_rationales(self, sentences_list):
         """Input: should be a list of sentences"""
