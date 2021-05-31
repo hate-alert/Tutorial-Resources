@@ -21,6 +21,11 @@ Social media sites such as Twitter and Facebook have connected billions of peopl
 * We also participate in several hate speech shared tasks, winning many of them - [hatealert@DLTEACL](https://www.aclweb.org/anthology/2021.dravidianlangtech-1.17.pdf), [hateminers@AMI](http://personales.upv.es/prosso/resources/FersiniEtAl_Evalita18.pdf), [hatemonitors@HASOC](https://dl.acm.org/doi/10.1145/3368567.3368584) and coming under 1% in [hatealert@Hatememe detection](https://www.drivendata.org/competitions/70/hateful-memes-phase-2/leaderboard/) by Facebook AI.   
 * [Notion page](https://www.notion.so/punyajoy/Hate-speech-papers-resource-7fc20fa1bea64cbdb30862092ae197b3) containing hate speech papers. 
 
+# Other Resources
+
+* A dataset resource created and maintained by Leon Derczynski and Bertie Vidgen. Click the link [here](https://hatespeechdata.com/)
+* This resource collates all the resources and links used in this information hub, for both teachers and young people. Click the link [here](https://www.stophateuk.org/resources-2/)
+
 # Few demos :abacus:
 
 We also provide some demos for the social scientists so that our opensource models can be used. Please provide feedback in the [issues](https://github.com/hate-alert/Tutorial-ICWSM-2021/issues).
