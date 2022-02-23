@@ -2,11 +2,8 @@
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 [![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fhate-alert%2FTutorial-ICWSM-2021&count_bg=%2379C83D&title_bg=%23555555&icon=peertube.svg&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com)
 
-# Hate speech detection, mitigation and beyond (Tutorial ICWSM-2021) 
-
-These are the resources and demos associated with the tutorial *"Hate speech detection, mitigation and beyond"* at [ICWSM 2021](https://www.icwsm.org/2021/index.html). Check our [website](https://hate-alert.github.io/talk/icwsm_tutorial/) here.
-
-**Date and Time** - June 7, 2021, 5:30 PM -7:00 PM IST
+# Hate speech detection, mitigation and beyond 
+These are the resources and demos associated with the tutorial *"Hate speech detection, mitigation and beyond"* at [ICWSM 2021](https://www.icwsm.org/2021/index.html). Check our [website](https://hate-alert.github.io/talk/icwsm_tutorial/) and [AAAI 2022](https://hate-alert.github.io/talk/aaai_tutorial/) here.
 
 # Abstract :bookmark:
 
