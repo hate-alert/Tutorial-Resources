@@ -3,7 +3,7 @@
 [![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fhate-alert%2FTutorial-ICWSM-2021&count_bg=%2379C83D&title_bg=%23555555&icon=peertube.svg&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com)
 
 # Hate speech detection, mitigation and beyond 
-These are the resources and demos associated with the tutorial *"Hate speech detection, mitigation and beyond"* at [ICWSM 2021](https://www.icwsm.org/2021/index.html). Check our [website](https://hate-alert.github.io/talk/icwsm_tutorial/) and [AAAI 2022](https://hate-alert.github.io/talk/aaai_tutorial/) here.
+These are the resources and demos associated with the tutorial *"Hate speech detection, mitigation and beyond"* at [ICWSM 2021](https://www.icwsm.org/2021/index.html) and [AAAI 2022](https://hate-alert.github.io/talk/aaai_tutorial/) are noted here.
 
 # Abstract :bookmark:
 
